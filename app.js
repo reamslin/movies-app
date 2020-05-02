@@ -95,6 +95,10 @@ function refreshHTML() {
 $('ul').on("click", ".remove", function (e) {
     // remove proper index from movieList
     movieList.splice(Number(e.target.id), 1);
+    // decrement index counter
+    currIndex--;
+    // fix indeces
+    refreshIndeces();
     // remove element from HTML
     $(e.target.parentElement).remove();
 })
